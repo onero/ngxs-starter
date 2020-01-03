@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { RouterState } from './router.state';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ngxsConfig } from './ngxs.config';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ngxsConfig } from './ngxs.config';
       [
         RouterState,
       ], ngxsConfig),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
