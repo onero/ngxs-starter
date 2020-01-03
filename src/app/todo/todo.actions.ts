@@ -21,14 +21,12 @@ export namespace TodoAction {
     export class DeleteTodo {
         static readonly type = '[Todo] Delete';
 
-        constructor(public id: number) {
-        }
+        constructor(public id: number) { }
     }
 
     export class SetSelectedTodo {
         static readonly type = '[Todo] Set';
 
-        constructor(public todo: Todo) {
-        }
+        constructor(public todo: Todo) { }
     }
 }
