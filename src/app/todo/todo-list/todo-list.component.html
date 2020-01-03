@@ -1,26 +1,45 @@
 <div *ngIf="todos$ | async as todos">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>UserId</th>
-                <th>Title</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let todo of todos">
-                <td>{{ todo.id }}</td>
-                <td>{{ todo.userId }}</td>
-                <td>{{ todo.title }}</td>
-                <td>
-                    <button class="btn btn-warning" (click)="editTodo(todo)">Edit</button>
-                </td>
-                <td>
-                    <button class="btn btn-danger" (click)="deleteTodo(todo.id)">Delete</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- <mat-form-field> -->
+    <!-- <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter"> -->
+    <!-- </mat-form-field> -->
+    <div class="mat-elevation-z8">
+
+        <mat-table [dataSource]="dataSource" matSort>
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+                <mat-cell *matCellDef="let todo"> {{ todo.id }} </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="userId">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> User Id </mat-header-cell>
+                <mat-cell *matCellDef="let todo"> {{ todo.userId }} </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="title">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+                <mat-cell *matCellDef="let todo"> {{ todo.title }} </mat-cell>
+            </ng-container>
+
+            <!-- Actions -->
+            <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                <mat-cell *matCellDef="let todo">
+                    <button style="margin-right: 3em;" (click)="editTodo(todo)" mat-raised-button color="primary">
+                        <mat-icon>create</mat-icon>
+                    </button>
+                    <button (click)="deleteTodo(todo.id)" mat-raised-button color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator #paginator [showFirstLastButtons]="true" [length]="todos.length" [pageIndex]="pageIndex" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+    </div>
 </div>

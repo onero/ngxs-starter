@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { TodoService } from './todo.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule, MatTableModule, MatInputModule } from '@angular/material';
+import { MaterialModule } from '../core/material/material.module';
 
 const routes = [
   { path: '', component: TodoPageComponent }
@@ -23,6 +25,7 @@ const routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     HttpClientModule,
+    MaterialModule,
     NgxsModule.forFeature([TodoState])
   ],
   providers: [TodoService]
