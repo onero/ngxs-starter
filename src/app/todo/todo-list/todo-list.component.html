@@ -15,10 +15,10 @@
                 <td>{{ todo.userId }}</td>
                 <td>{{ todo.title }}</td>
                 <td>
-                    <button class="btn btn-primary" (click)="editTodo(todo)">Edit</button>
+                    <button class="btn btn-warning" (click)="editTodo(todo)">Edit</button>
                 </td>
                 <td>
-                    <button class="btn btn-primary" (click)="deleteTodo(todo.id)">Delete</button>
+                    <button class="btn btn-danger" (click)="deleteTodo(todo.id)">Delete</button>
                 </td>
             </tr>
         </tbody>
