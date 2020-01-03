@@ -7,6 +7,7 @@ import { TodoState } from './todo.state';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from '../core/core.module';
 
 const routes = [
   { path: '', component: TodoPageComponent }
@@ -16,6 +17,7 @@ const routes = [
   declarations: [TodoPageComponent, TodoListComponent, TodoFormComponent],
   imports: [
     CommonModule,
+    CoreModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     NgxsModule.forFeature([TodoState])

@@ -9,6 +9,7 @@ import { RouterState } from './router.state';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ngxsConfig } from './ngxs.config';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     NgxsModule.forRoot(
       [
         RouterState,

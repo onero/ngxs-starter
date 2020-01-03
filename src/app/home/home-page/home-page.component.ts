@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Store } from '@ngxs/store';
-import { Navigate, AppRoutes } from 'src/app/router.state';
 
 @Component({
   selector: 'app-home-page',
@@ -12,13 +9,9 @@ export class HomePageComponent implements OnInit {
 
   title = 'Ngxr Test';
 
-  constructor(private store: Store) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  logout() {
-    this.store.dispatch(new Navigate(AppRoutes.LOGIN));
   }
 
 }

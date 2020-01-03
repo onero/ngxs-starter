@@ -3,6 +3,7 @@ import { State, StateContext, Action } from '@ngxs/store';
 
 export enum AppRoutes {
     HOME = '/home',
+    TODO = '/todo',
     LOGIN = '/login'
 }
 
