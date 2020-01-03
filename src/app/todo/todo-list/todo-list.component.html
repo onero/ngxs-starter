@@ -5,19 +5,19 @@
     <div class="mat-elevation-z8">
 
         <mat-table [dataSource]="dataSource" matSort>
-            <!-- Position Column -->
+            <!-- Id Column -->
             <ng-container matColumnDef="id">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
                 <mat-cell *matCellDef="let todo"> {{ todo.id }} </mat-cell>
             </ng-container>
 
-            <!-- Name Column -->
+            <!-- User Id Column -->
             <ng-container matColumnDef="userId">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> User Id </mat-header-cell>
                 <mat-cell *matCellDef="let todo"> {{ todo.userId }} </mat-cell>
             </ng-container>
 
-            <!-- Weight Column -->
+            <!-- Title Column -->
             <ng-container matColumnDef="title">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
                 <mat-cell *matCellDef="let todo"> {{ todo.title }} </mat-cell>
@@ -33,6 +33,15 @@
                     <button (click)="deleteTodo(todo.id)" mat-raised-button color="warn">
                         <mat-icon>delete</mat-icon>
                     </button>
+                </mat-cell>
+            </ng-container>
+
+
+            <!-- Completed Column -->
+            <ng-container matColumnDef="completed">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Completed </mat-header-cell>
+                <mat-cell *matCellDef="let todo">
+                    <mat-checkbox [checked]="todo.completed"></mat-checkbox>
                 </mat-cell>
             </ng-container>
 

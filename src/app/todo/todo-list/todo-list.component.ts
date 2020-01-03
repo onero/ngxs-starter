@@ -14,7 +14,7 @@ import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 export class TodoListComponent implements AfterViewInit {
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  displayedColumns: string[] = ['id', 'userId', 'title', 'actions'];
+  displayedColumns: string[] = ['id', 'userId', 'title', 'completed', 'actions' ];
   pageSize = 10;
   pageIndex = 0;
   dataSource = new MatTableDataSource<Todo>();
