@@ -6,7 +6,6 @@ import { NgxsModule } from '@ngxs/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterState } from './router.state';
-import { AuthModule } from './auth/auth.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ngxsConfig } from './ngxs.config';
 
@@ -21,7 +20,6 @@ import { ngxsConfig } from './ngxs.config';
       [
         RouterState,
       ], ngxsConfig),
-    AuthModule,
     NgbModule.forRoot()
   ],
   providers: [],
